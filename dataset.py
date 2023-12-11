@@ -8,7 +8,7 @@ class DetectionDataset(Dataset):
     def __init__(self, annot_path, transform=None):
         self.annot_path = annot_path
         self.transform = transform
-        self.annotations = pd.read_csv(annot_path)
+        self.annotations = pd.read_pickle(annot_path)
 
     def __getitem__(self, idx):
         annotation = self.annotations.iloc[idx]
