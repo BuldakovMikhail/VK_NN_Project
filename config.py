@@ -1,4 +1,4 @@
-config = {"DETECTOR_WEIGHTS_PATH": "weights/detector_params", "REGRESSOR_WEIGHTS_PATH": "weights/model_params"}
+config = {"DETECTOR_WEIGHTS_PATH": "weights/detector_params", "REGRESSOR_WEIGHTS_PATH": "weights/regressor_params"}
 CLASSES = ['hot-dog',
            'Apple',
            'Artichoke',
