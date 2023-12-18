@@ -50,10 +50,6 @@ def get_prediction(image_path, model, min_score):
         processed_embeddings = embed7.view(-1, 256 * 4 * 4)
         prediction_regression = model.regressor(processed_embeddings)[0]
 
-    # print(
-    #     f"calories: {prediction_regression[0]}, fats: {prediction_regression[1]}, carbs: {prediction_regression[2]}, proteins: {prediction_regression[3]}")
-
-    # prediction_detection = predictions_detection[0]
     prediction_detection = sanitize_prediction(prediction_detection, min_score)
 
     image = denormalizer(test_image)
@@ -69,8 +65,7 @@ def get_prediction(image_path, model, min_score):
 
 def visualize_prediction(image_path, model, min_score):
     image, values = get_prediction(image_path, model, min_score)
-    print(
-        f"calories: {values[0]}, fats: {values[1]}, carbs: {values[2]}, proteins: {values[3]}")
 
     plt.imshow(image)
+    plt.title(f"calories: {values[0].int()}, fats: {values[1]:.1f}, carbohydrates: {values[2]:.1f}, proteins: {values[3]:.1f}")
     plt.show()
