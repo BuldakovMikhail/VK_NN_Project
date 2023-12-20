@@ -2,8 +2,8 @@ import torch
 from torch import nn
 import lightning.pytorch as pl
 
-from models.food_detector import FoodDetector
-from config import config
+from src.models.food_detector import FoodDetector
+from src.config import config
 
 
 class RMSELoss(nn.Module):
